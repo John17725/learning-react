@@ -6,15 +6,15 @@ const bodyparser = require('body-parser');
 require('./database');
 
 
-app.set('Port',4000);
+app.set('Port', 4000);
 
 app.use(morgan('dev'))
 
-// app.use(bodyparser.urlencoded({
-//     extended: true
-// }));
+app.use(bodyparser.urlencoded({
+    extended: true
+}));
 
-// app.use(bodyparser.json());
+app.use(bodyparser.json());
 
 // Routing
 app.use('/api/', require('./routes/test.route'))
